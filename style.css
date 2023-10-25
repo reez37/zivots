@@ -606,11 +606,12 @@ button:hover {
        transition: transform 0.5s ease-in-out;
        
      }
-     .translater{
-      transform: translateX(-404px);
+     .translator {
+      
+      transform: translateX(-804px);#-404S
     }
-    .translatel{
-      transform: translateX(404px);
+    .translater2{
+      transform: translateX(-804px);
     }
 
 

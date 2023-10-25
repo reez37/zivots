@@ -105,44 +105,48 @@
 			<h1 class="h-team">Our Team</h1>
 			
 			<div class="team-card">
-				<div class="team-container">
-					<div class="team-member" >
+				<div class="team-container" id="team-slides">
+					<div class="team-member" id ="1">
 						<img src="reez.png" alt="Team Member 1">
 						<div class="team-info">
 							<h2>Reez MG</h2>
 							<p>Developer</p>
 						</div>
 					</div>
-					<div class="team-member">
+					
+					<div class="team-member" id="2">
 						<img src="hana.png" alt="Team Member 2">
 						<div class="team-info">
 							<h2>Hana</h2>
 							<p>UI Designer</p>
 						</div>
-						</div>
+					</div>
 					
-					<div class="team-member">
-						<img src="Hisham.jpg" alt="Team Member 2">
+					<div class="team-member" id="3">
+						<img src="Hisham.jpg" alt="Team Member 3">
 						<div class="team-info">
-							<h2>Mohammed Hisham Jaleel</h2>
+							<h2>M Hisham Jaleel</h2>
 							<p>UI/UX Designer / Developer</p>
 						</div>
 						
 					</div>
-					<div class="team-member">
-						<img src="saleeq.jpg" alt="Team Member 2">
+
+					<div class="team-member" id ="4">
+						<img src="saleeq.jpg" alt="Team Member 4">
 						<div class="team-info">
-							<h2>Mohammed Saleeq Kolleth</h2>
-							<p>Full stack Developer</p>
+							<h2>Mohammed Saleeq K</h2>
+							<p>Developer</p>
 						</div>
 					</div>
+
 				</div>
 				
 				
 			</div>
+		
 			<div class="arwbtn">
 			<!-- <button class="arrow" onclick="translatel()">&#8406;</button> -->
-			<button class="arrow" onclick="translater()">❮      ❯</button>
+			<button class="arrow" onclick="prevMember()">❮</button>   <button class="arrow" onclick="nextMember()">❯</button>
 				</div>
 		  </section>
 
@@ -195,6 +199,7 @@
 			  </a>
 			</div>
 		</section>
+
 		<section class="contact" id="contact">
 			
 				<h2 class="h-contact">Contact Us</h2>
@@ -253,11 +258,39 @@
 				console.log('close')
 			}
 			}
-
+			
 			function translater(){
+
 				const element = document.querySelector('.team-container');
+				//console.log(element.classList);
   				element.classList.toggle('translater');
+				
+				
+
 			}
+			let count=1
+			function nextMember(){
+				
+				const carousal =document.getElementById("team-slides")
+				if (count <4){
+					carousal.style.transform = `translateX(-${count*404}px)`
+					count = count+1;
+				}
+				console.log(count);
+				if (count >4)count=4;
+			}
+			function prevMember(){
+				
+				const carousal =document.getElementById("team-slides")
+				
+				carousal.style.transform = `translateX(-${(count-1)*404}px)`;
+				count = count-1;
+
+				
+				console.log(count);
+				if(count<1){count=1};
+			}
+		
 
 			// function translatel(){
 			// 	const element = document.querySelector('.translater');
